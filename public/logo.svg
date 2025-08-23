@@ -1,0 +1,67 @@
+<svg 
+  xmlns="http://www.w3.org/2000/svg" 
+  viewBox="0 0 300 80" 
+  width="300" 
+  height="80"
+  fill="none"
+>
+  <style>
+    /* Theme-specific colors */
+    :root {
+      --logo-text-light: #111;
+      --logo-icon-light: #2563eb;
+      --logo-text-dark: #fff;
+      --logo-icon-dark: #60a5fa;
+    }
+
+    @media (prefers-color-scheme: light) {
+      .logo-text { fill: var(--logo-text-light); }
+      .logo-icon { fill: var(--logo-icon-light); }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .logo-text { fill: var(--logo-text-dark); }
+      .logo-icon { fill: var(--logo-icon-dark); }
+    }
+
+    /* Animation for the grid squares */
+    .pulse {
+      transform-origin: center;
+      animation: pulseAnim 2s infinite ease-in-out;
+    }
+    .pulse:nth-child(1) { animation-delay: 0s; }
+    .pulse:nth-child(2) { animation-delay: 0.2s; }
+    .pulse:nth-child(3) { animation-delay: 0.4s; }
+    .pulse:nth-child(4) { animation-delay: 0.6s; }
+
+    @keyframes pulseAnim {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.7; }
+    }
+
+    /* Smooth text fade-in */
+    .logo-text {
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 32px;
+      font-weight: 600;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+      animation-delay: 1s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
+
+  <!-- Dashboard squares (icon) -->
+  <g transform="translate(20,20)">
+    <rect class="logo-icon pulse" x="0" y="0" width="20" height="20" rx="4"/>
+    <rect class="logo-icon pulse" x="30" y="0" width="20" height="20" rx="4"/>
+    <rect class="logo-icon pulse" x="0" y="30" width="20" height="20" rx="4"/>
+    <rect class="logo-icon pulse" x="30" y="30" width="20" height="20" rx="4"/>
+  </g>
+
+  <!-- Text -->
+  <text class="logo-text" x="90" y="50">ControlRoom</text>
+</svg>
