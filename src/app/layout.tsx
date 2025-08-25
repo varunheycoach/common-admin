@@ -47,7 +47,6 @@ export default async function RootLayout({
               <Navbar />
               <div className="px-4">{children}</div>
             </main>
-            {children}
           </SidebarProvider>
         </ThemeProvider>
       </body>
